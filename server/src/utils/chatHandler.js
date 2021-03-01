@@ -1,16 +1,14 @@
 const { prefix } = require("../config.json");
-const { CommandFactory } = require("../store/CommandFactory");
-
-// onHTTPEvent(client, "#0neguy", data);
+const { CommandFactory } = require("./commandFactory");
 
 const commands = new CommandFactory(process.cwd() + "/src/commands/");
 
-const isUserPermitted = require("../utils/perms");
+const isUserPermitted = require("./perms");
 
 module.exports = async (client, ...eventParams) => {
   let [channel, userstate, message, self] = eventParams;
 
-  if (self) return;
+  // if (self) return;
   if (!message.startsWith(prefix)) return;
 
   const context = message.slice(prefix.length).split(/ +/);
@@ -19,7 +17,7 @@ module.exports = async (client, ...eventParams) => {
 
   if (command !== null) {
     if (isUserPermitted(userstate["badges"], command.permissions))
-      await command.run(client, channel, userstate, context);
+      await command.run(client, channel, userstate, context, message);
     else {
       const msg = `@${userstate["display-name"]} - You don't have permission to use that command!`;
       await client.say(channel, msg);

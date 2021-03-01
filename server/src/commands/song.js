@@ -6,7 +6,6 @@ const authBuffer = Buffer.from(`${ID}:${SECRET}`).toString("base64");
 module.exports = {
   name: "song",
   aliases: ["music"],
-  permissions: ["moderator", "vip"],
   run: async (client, channel, userstate, context) => {
     axios({
       method: "POST",
@@ -26,7 +25,8 @@ module.exports = {
           const notPlaying = "0NEGUY's Spotify is not currently playing music";
           client.say(channel, notPlaying);
         } else {
-          const message = `🎵 ${item.name} by ${item.artists[0].name} 🎵 ${item.external_urls.spotify}`;
+          // item.external_urls.spotify
+          const message = `catJAM We're listening to: ${item.name} by ${item.artists[0].name}`;
           client.say(channel, message);
         }
       });
