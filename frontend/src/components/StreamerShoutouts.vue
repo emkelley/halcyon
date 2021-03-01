@@ -21,7 +21,7 @@
           ></b-input>
           <p class="control">
             <b-button @click="fireShoutout" class="button is-secondary search"
-              >Search</b-button
+              >Send Shoutout</b-button
             >
           </p>
         </b-field>

@@ -11,7 +11,8 @@
                 style="color: #ff005b; letter-spacing: .03rem"
                 target="_blank"
               >
-                Made with ❤️ by @0NEGUYY
+                Made with
+                <i class="fad fa-heart" style="margin: 0 .5rem"></i> by @0NEGUYY
               </a>
 
               <a
@@ -54,7 +55,7 @@
     <div class="container">
       <div class="columns is-multiline">
         <div class="column is-12">
-          <div id="FireCommands" class="card">
+          <div id="StreamStats" class="card">
             <div class="card-header">
               <h2 class="subtitle">
                 <i
@@ -72,7 +73,7 @@
                 <b-field grouped group-multiline>
                   <p v-for="n in 5" :key="n" class="control">
                     <b-button
-                      size="is-small is-secondary is-light"
+                      size="is-small is-secondary is-rounded"
                       label="!admin"
                     />
                   </p>
@@ -353,7 +354,9 @@ export default {
 .card {
   border-radius: 10px;
   background: darken($color: #16163d, $amount: 7);
-  box-shadow: rgba(0, 0, 7, 0.2) 0px 7px 29px 0px;
+  border: 1px solid darken($color: #16163d, $amount: 8);
+  box-shadow: rgba(9, 9, 10, 0.5) 5px 5px 10px 0px,
+    rgba(42, 42, 49, 0.376) -5px -5px 10px 0px;
   color: ghostwhite;
   .card-header {
     padding: 1rem;

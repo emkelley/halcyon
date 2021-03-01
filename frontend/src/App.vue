@@ -12,7 +12,7 @@
 }
 
 #app {
-  background: $primary;
+  background: darken($color: #16163d, $amount: 7);
   min-height: 100vh;
   padding-bottom: 10rem;
 }

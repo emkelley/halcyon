@@ -18,7 +18,7 @@
         ></b-input>
         <p class="control">
           <b-button @click="fireMessage" class="button is-secondary search"
-            >Search</b-button
+            >Send Message</b-button
           >
         </p>
       </b-field>
