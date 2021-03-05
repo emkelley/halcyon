@@ -34,7 +34,7 @@ $label-weight: 400;
 $input-radius: 999px;
 $input-color: ghostwhite;
 $input-background-color: darken($primary, 5);
-$input-border-color: hsl(339, 100%, 20%);
+$input-border-color: hsl(278, 100%, 20%);
 $input-hover-border-color: $secondary;
 $input-focus-border-color: $secondary;
 

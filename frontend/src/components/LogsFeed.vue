@@ -4,7 +4,7 @@
       <div class="level">
         <div class="level-left">
           <div class="level-item">
-            <i class="fad fa-robot" style="margin-right:.5rem"></i>
+            <i class="fas fa-robot" style="margin-right:.5rem"></i>
             Logs Feed
           </div>
           <div class="level-item">

@@ -5,6 +5,7 @@ const cors = require("cors");
 const qs = require("querystring");
 const helmet = require("helmet");
 const axios = require("axios");
+const chalk = require("chalk");
 const tmi = require("tmi.js");
 const path = require("path");
 const app = express();
@@ -13,6 +14,28 @@ const HalcyonConfig = require("./config.json");
 const onChatEvent = require("./utils/chatHandler");
 const { CommandFactory } = require("./utils/commandFactory");
 const commands = new CommandFactory(process.cwd() + "/src/commands/");
+const Discord = require("discord.js");
+const discordClient = new Discord.Client();
+
+// *
+// * Discord discord.js Bot
+// *
+
+discordClient.on("ready", () => {
+  console.log(
+    chalk
+      .hex("#7289DA")
+      .bold(`${discordClient.user.tag} has connected to Discord`)
+  );
+});
+
+discordClient.on("message", (msg) => {
+  if (msg.content === "ping") {
+    msg.reply("Pong!");
+  }
+});
+
+discordClient.login(process.env.DISCORD_BOT_TOKEN);
 
 // *
 // * Twitch TMI.js Bot
@@ -21,6 +44,10 @@ const commands = new CommandFactory(process.cwd() + "/src/commands/");
 client = new tmi.Client(HalcyonConfig.tmiOptions);
 
 client.connect();
+
+client.on("connected", () =>
+  console.log(chalk.hex("#ba43ff").bold(`robo0NEGUY has connected to Twitch`))
+);
 
 client.on(
   "message",
@@ -44,7 +71,9 @@ client.on(
 // *
 // * Express Server
 // *
-
+let whitespaceemote = `
+⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ SexyOfficer ⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀
+`;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(helmet());
@@ -53,9 +82,9 @@ app.options("*", cors());
 
 app.listen(port, () => {
   console.log(
-    "\u001b[96;2m➯",
-    `Halcyon web server listening on http://localhost:${port}`,
-    "\u001b[0m"
+    chalk
+      .hex("#83C040")
+      .bold(`Halcyon node server listening on http://localhost:${port}`)
   );
 });
 

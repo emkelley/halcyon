@@ -2,7 +2,7 @@
   <div id="FireCommands" class="card">
     <div class="card-header">
       <h2 class="subtitle">
-        <i class="fad fa-megaphone" style="margin-right:.5rem"></i>
+        <i class="fas fa-megaphone" style="margin-right:.5rem"></i>
         Streamer Shoutouts
       </h2>
     </div>

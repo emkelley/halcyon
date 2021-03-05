@@ -2,7 +2,7 @@
   <div id="SendChatMessage" class="card">
     <div class="card-header">
       <h2 class="subtitle">
-        <i class="fad fa-comment-alt-lines" style="margin-right:.5rem"></i>
+        <i class="fas fa-comment-alt-lines" style="margin-right:.5rem"></i>
         Send a Message
       </h2>
     </div>

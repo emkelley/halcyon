@@ -6,6 +6,7 @@
  **/
 
 const fs = require("fs");
+const chalk = require("chalk");
 
 class CommandFactory {
   constructor(directory) {
@@ -24,7 +25,11 @@ class CommandFactory {
         console.info(`Command ${file} has been loaded.`);
         this._commands.push(command);
       } catch (error) {
-        console.warn(`Command ${file} could not be loaded. ${error}`);
+        console.log(
+          chalk
+            .hex("#ff2c3c")
+            .bold(`Command ${file} could not be loaded. ${error}`)
+        );
       }
     });
   }

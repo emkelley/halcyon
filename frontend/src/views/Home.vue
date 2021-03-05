@@ -12,7 +12,7 @@
                 target="_blank"
               >
                 Made with
-                <i class="fad fa-heart" style="margin: 0 .5rem"></i> by @0NEGUYY
+                <i class="far fa-heart" style="margin: 0 .5rem"></i> by @0NEGUYY
               </a>
 
               <a
@@ -59,7 +59,7 @@
             <div class="card-header">
               <h2 class="subtitle">
                 <i
-                  class="fad fa-tachometer-alt-fast"
+                  class="far fa-tachometer-alt-fast"
                   style="margin-right:.5rem"
                 ></i>
                 Stream Stats
@@ -91,7 +91,7 @@
                 <div class="card-header">
                   <h2 class="subtitle">
                     <i
-                      class="fad fa-rocket-launch"
+                      class="far fa-rocket-launch"
                       style="margin-right:.5rem"
                     ></i>
                     Run Commands
@@ -129,7 +129,7 @@
           <div id="CRONCommands" class="card">
             <div class="card-header">
               <h2 class="subtitle">
-                <i class="fad fa-stopwatch" style="margin-right:.5rem"></i>
+                <i class="far fa-stopwatch" style="margin-right:.5rem"></i>
                 CRON Commands
               </h2>
             </div>
@@ -146,7 +146,7 @@
                   <div class="level-right">
                     <div class="level-item">
                       <button class="button is-primary">
-                        <i class="fad fa-plus" style="margin-right:.5rem"></i
+                        <i class="far fa-plus" style="margin-right:.5rem"></i
                         >Add A New CRON Command
                       </button>
                     </div>
@@ -243,7 +243,7 @@
           <div id="TwitchChat" class="card">
             <div class="card-header">
               <h2 class="subtitle">
-                <i class="fad fa-comments" style="margin-right:.5rem"></i>
+                <i class="far fa-comments" style="margin-right:.5rem"></i>
                 Chat Feed
               </h2>
             </div>
