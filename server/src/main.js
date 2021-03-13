@@ -54,6 +54,13 @@ client.on(
   async (channel, userstate, message, self) =>
     await onChatEvent(client, channel, userstate, message, self)
 );
+// client.on(
+//   "message", (channel, userstate, message, self) => {
+//     if (message.includes('The shuffled word is')) {
+
+//     }
+//   }
+// );
 client.on("subscription", function (channel, username, methods) {
   client.say(channel, username + " Has subscribed PogChamp ");
 });
