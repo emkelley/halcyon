@@ -1,0 +1,19 @@
+{
+  "tmiOptions": {
+    "options": {
+      "debug": true
+    },
+    "connection": {
+      "reconnect": true,
+      "secure": true
+    },
+    "identity": {
+      "username": "BOT_USERNAME",
+      "password": "oauth:xxxxxxxxxxxxxxxxxxxxxxxx"
+    },
+    "channels": [
+      "0neguy"
+    ]
+  },
+  "prefix": "!"
+}
