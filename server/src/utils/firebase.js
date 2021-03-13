@@ -1,7 +1,7 @@
 const firebase = require("firebase");
 
 const config = {
-  apiKey: "AIzaSyDVZRFAYf1eWp51IKklrJ0XMkV0dPTLyOg",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "testinggrounds-96659.firebaseapp.com",
   projectId: "testinggrounds-96659",
   storageBucket: "testinggrounds-96659.appspot.com",
