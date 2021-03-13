@@ -32,18 +32,7 @@ const getCurrentDBCommands = async (
   const endpoint = `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/commands`;
   const headers = { Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}` };
   await axios.get(endpoint, { headers }).then(({ data: { records } }) => {
-    const existingCommands = [];
-    records.forEach((record) => existingCommands.push(record.fields.command));
-    setCommandInDB(
-      client,
-      channel,
-      {
-        addedBy,
-        command,
-        response,
-      },
-      existingCommands
-    );
+    records.forEach((record) => {});
   });
 };
 
