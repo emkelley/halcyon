@@ -1,5 +1,9 @@
 # Halcyon Server
 
+This bot is extremely customized to my needs so keep that in mind if you want to use it. To get it running, you'll need to fill out the values in config_example.json. Use the links and guide below to help with that:
+
+
+
 - Get your twitch bot OAuth token password [over here](https://twitchapps.com/tmi/)
 - Get your spotify auth refresh token by following the steps below.
 
