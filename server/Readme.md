@@ -19,7 +19,7 @@
 
 ## Get the Refresh Token
 
-* Navigate to the following URL:
+* Navigate to the following URL - be sure to replace SPOTIFY_CLIENT_ID with your actual client ID:
 
 ```
 https://accounts.spotify.com/authorize?client_id=SPOTIFY_CLIENT_ID&response_type=code&scope=user-read-currently-playing,user-read-recently-played&redirect_uri=http://localhost/callback/
