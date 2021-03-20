@@ -139,6 +139,11 @@ app.post("/message", function (req, res) {
   client.say("#0neguy", message);
   res.sendStatus(200);
 });
+app.post("/face", function (req, res) {
+  client.say("#moonmoon", "moon21 moon22");
+  client.say("#moonmoon", "moon23 moon24");
+  res.sendStatus(200);
+});
 
 app.post("/command/:id", function (req, res) {
   const usrState = {

@@ -1,6 +1,6 @@
 module.exports = {
   name: "betsclosed",
-  aliases: ["bc"],
+  aliases: ["cclosed"],
   permissions: ["broadcaster", "moderator", "vip"],
   run: async (client, channel, userstate, context, message) => {
     client.say(
